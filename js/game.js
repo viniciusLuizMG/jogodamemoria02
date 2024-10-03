@@ -46,17 +46,17 @@ const stopMusic = () => {
 
 // Array com os nomes dos personagens (primeira metade dos pares)
 const characters = [
-  '01', '02', '3', '4', '5', '06', '07', '08', '09', '10',
+  '1', '02', '3', '4', '5', '06', '07', '08', '09', '10',
 ];
 
 // Array com os nomes das cópias dos personagens (segunda metade dos pares)
 const pesona = [
-  '01', '02', '3', '4', '5', '06', '07', '08', '09', '10',
+  '1', '02', '3', '4', '5', '06', '07', '08', '09', '10',
 ];
 
 // Objeto que associa cada personagem à sua respectiva cópia
 const pairs = {
-  '01': '01', '02': '02', '3': '3', '4': '4', '5': '5',
+  '1': '1', '02': '02', '3': '3', '4': '4', '5': '5',
   '06': '06', '07': '07', '8': '8', '9': '09', '10': '10',
 };
 
