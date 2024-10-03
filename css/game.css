@@ -1,0 +1,177 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url('../images/bg.jpg');  /*  fundo da tela */
+  background-size: cover;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 50px;
+}
+
+/* Estilo para o título */
+.titulo {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color:rgba(255, 255, 255, 0.8);
+  /* Fundo verde, similar à cor da molécula */
+  border-radius: 10px;
+}
+
+.titulo h1 {
+  font-size: 28px;
+  color: black;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+ 
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2em;
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+  margin: 0 0 30px;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  aspect-ratio: 3/4;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+  background-color: #ccc;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #00b5cc;
+  border-radius: 5px;
+  transition: all 400ms ease;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.back {
+  background-image: url('../images/back.png');/*  fundo da imagem */
+  backface-visibility: hidden;
+}
+
+.reveal-card {
+  transform: rotateY(180deg);
+}
+
+.disabled-card {
+  filter: saturate(0);
+  opacity: 0.5;
+}
+
+.endgame-message {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+  color: white;
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Garantir que fique acima de outros elementos */
+}
+
+.endgame-message p {
+  margin: 10px 0;
+}
+
+.restart-button {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 1.5em;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001; /* Acima de outros elementos */
+}
+
+.restart-button:hover {
+  background-color: #218838;
+}
+
+
+@media screen and (max-width:800px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  header {
+    font-size: 0.7em; /* Diminui o tamanho do texto do header */
+    padding: 18px; /* Ajusta o padding para caber em telas menores */
+}
+
+.player, .timer {
+    font-size: 0.8em; /* Diminui o tamanho da fonte do nome do jogador e do tempo */
+}
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  
+  }
+  .endgame-message {
+      font-size: 16px;
+      padding: 15px;
+  }
+
+  .restart-button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  .card {
+      width: 80px;
+      height: 120px;
+  }
+}
+
+
+
